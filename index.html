@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>nikhil bansal.</title>
+    <link rel = "icon" href = "assets/img/atom.png"
+        type = "image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="loading">
+        <div id="spinner"></div>
+    </div>
+    <div id="particles-js"></div>
+    
+    <div id="header" class="animated slideInDown" style="animation-delay:1.8s;">
+    <div id="title">nikhil bansal.</div><br>
+    <div id="links">
+        <a href="./index.html">home</a>
+        <a href="./skills.html">cv</a>
+        <a href="./work.html">works</a>
+        <a href="./contact.html">contact</a>
+    </div>
+    </div>
+
+    <center>
+    <div id="middle">
+        <div class="container">
+            <div class="image">
+              <img src="assets/img/nb6.jpeg">
+            </div>
+            <div id="tagline" class="animated zoomIn" style="animation-delay:1.8s; line-height: 1.8;">
+                Welcome to my webpage. I am still constructing the webpage but you can still look. The webpage contains basic info about my past projects and contact. 
+                <br>
+                <br>
+                <p>
+                    <q id="quote"> If You Don't Share Someone's Pain, You Can Never Understand them. <hr></q>
+                </p>
+                <div id="quote_author" style="text-align: center; font-size: 11px; color: rgb(255 255 255 / 60%); ">Nagato (Pain)</div>
+            </div>
+          </div>
+    </div>
+    </center>
+
+    <div id="portfolio_about">
+        <div id="about">
+            <h1>about.<hr id = "skills_line"></h1> 
+        
+           
+            <p style="font-size: 15px; line-height: 2.0;">
+               I am <a id="mynameabout">Nikhil Bansal</a>, Physics Master student at <a id="mynameabout">IISER Mohali</a>. I am an Aspiring theoretical Physicist in the field of Quantum Information and Computation. Currently, I am epxloring various fields related to QIC like Quantum error correction, Open Quantum systems and Quantum causal Model. Previously, I have explored some of the Non perturbative methods in Quantum field theory. 
+            </p>
+            <p style="font-size: 15x; line-height: 2.0;">
+                Other than physics, I also like to do programming. In hobbies, I like to play chess, table tennis and minecraft. I am also getting into hobbies of playing flute and reading books. I have been a great fan of mystery genre liking Detectice Conan and Holmes.
+            </p>
+        </div>
+        </div>
+    
+</div>
+    </div>
+             
+   
+<script src="index.js" type="text/javascript"></script>
+<script src="particles.js"></script>
+<script src="app.js"></script>
+<script>(function() {
+    // Define images
+    var getQuote, quotes, totalQuotes;
+  
+    quotes = ['When you give up, your dreams and everything else, they’re gone. Hard work is worthless for those that don’t believe in themselves', 'Those who forgive themselves, and are able to accept their true nature… THEY ARE THE STRONG ONES', 
+             'A hero is not the one who never falls. He is the one who gets up, again and again, never losing sight of his dreams.', `If You Don't Share Someone's Pain, You Can Never Understand them.`,
+              `Tell your heart that the fear of suffering is worse than the suffering itself.`, `It is foolish to fear what we have yet to see and know.`, `The first principle is that you must not fool yourself and you are the easiest person to fool.`,
+              `However difficult life may seem, there is always something you can do and succeed at.`, `The Science of today is the technology of tomorrow.`, `A conclusion is the place where you got tired thinking.`,
+              `Sometimes it's the detours which turn out to be the fruitful ideas.`, `I can't imagine not being in a phase where I'm trying to understand something or create something. That's the essence of life.`,
+              `Science in textbooks is not fun. But if you start doing science yourself, you will find delight.`,`Nobody ever figures out what life is all about, and it doesn't matter. Explore the world. Nearly everything is really interesting if you go into it deeply enough.`,
+              `I learned very early the difference between knowing the name of something and knowing something.`,`Religion is a culture of faith; science is a culture of doubt`, `I would rather have questions that can't be answered than answers that can't be questioned.`,
+              `I'm smart enough to know that I'm dumb.`];
+    quotes_author = ['Naruto Uzumaki (Kishimoto)', 'Itachi Uchiha (Kishimoto)', 'Rock Lee (Kishimoto)', 'Nagato (Kishimoto)', 'The Alchemist (Paulo Coelho)', 'Itachi Uchiha (Kishimoto)', 'Richard P. Feynman', 'Stephen Hawking',
+                     'Edward Teller', 'Martin H. Fischer', 'Roger Penrose', 'Kip Thorne', 'Masatoshi Koshiba', 'Richard P. Feynman', 'Richard P. Feynman', 'Richard P. Feynman', 'Richard P. Feynman', 'Richard P. Feynman']
+    // Counts total images
+    totalQuotes = quotes.length;
+  
+    // Get Quote
+    getQuote = function() {
+      var activeQuotes;
+      var chosenindex;
+      // Gets random image from array
+      chosenindex = Math.floor(Math.random() * totalQuotes)
+      activeQuotes = quotes[chosenindex];
+      activeQuotesauthor = quotes_author[chosenindex];
+      // Changes background of div
+      return $('#quote').text(activeQuotes),$('#quote_author').text(activeQuotesauthor);
+    };
+  
+    getQuote();
+  
+    $('button').on('click', function(e) {
+      e.preventDefault();
+      return getQuote();
+    });
+  
+  }).call(this);
+  </script>
+<div id="footer" style="z-index: 10;">
+    &copy;2023 Copyright <br><br> <a id="'myname">Nikhil Bansal</a> | Design majorly inspired from <a id = "myname" href="https://imfunniee.github.io">imfunniee</a>
+</div>
+</body>
+</html>
